@@ -6,27 +6,30 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    stack<long long>st,mx;
-    int t;cin>>t;
-    while(t--){
-        long long n,x;cin>>n;
-        if(n==1){
-            cin>>x;
+    stack<long long> st, mx;
+    long long t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        if (n == 1) {
+            long long x;
+            cin >> x;
             st.push(x);
-            if (mx.empty())
+            if (mx.empty()) {
                 mx.push(x);
-            else
-                mx.push(max(x,mx.top()));
-        }
-        else if(n==2){
-            if (!st.empty()){
+            } else {
+                mx.push(max(x, mx.top()));
+            }
+        } else if (n == 2) {
+            if (!st.empty()) {
                 st.pop();
                 mx.pop();
             }
         }
 
         if (!mx.empty()) {
-            cout<<mx.top()<<endl;
+            cout << mx.top() << "\n";
         }
     }
 
