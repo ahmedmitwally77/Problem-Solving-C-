@@ -1,0 +1,34 @@
+//https://codeforces.com/group/3nQaj5GMG5/contest/373244/problem/K
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    stack<long long>st,mx;
+    int t;cin>>t;
+    while(t--){
+        long long n,x;cin>>n;
+        if(n==1){
+            cin>>x;
+            st.push(x);
+            if (mx.empty())
+                mx.push(x);
+            else
+                mx.push(max(x,mx.top()));
+        }
+        else if(n==2){
+            if (!st.empty()){
+                st.pop();
+                mx.pop();
+            }
+        }
+
+        if (!mx.empty()) {
+            cout<<mx.top()<<endl;
+        }
+    }
+
+    return 0;
+}
