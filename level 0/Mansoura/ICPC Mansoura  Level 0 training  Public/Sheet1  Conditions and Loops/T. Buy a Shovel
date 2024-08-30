@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+int  k,r;cin>>k>>r;
+int count=1;
+while(true){
+    long long sum=k*count;
+    if(sum%10==0 || sum%10==r)
+    {
+        cout<<count;
+        break;
+    }
+    count++;
+}
+
+
+
+
+    return 0;
+}
