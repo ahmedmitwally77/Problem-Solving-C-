@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int w,a,b,c;cin>>w>>a>>b>>c;
+    while (w>0){
+        w-=a;
+        if (w<b){
+            cout<<"M";
+            break;
+        }
+        w-=b;
+         if (w<c){
+            cout<<"T";
+            break;
+        }
+        w-=c;
+        if (w<a){
+            cout<<"F";
+            break;
+        }
+
+    }
+    return 0;
+}
