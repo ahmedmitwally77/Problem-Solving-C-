@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while (t--) {
+        long long num;
+        cin >> num;
+
+        long long tot = num * (num + 1) / 2;
+
+        long long pow = 0;
+        for (long long i = 1; i <= num; i *= 2) {
+            pow += i;
+        }
+
+        cout << tot - 2 * pow << endl;
+    }
+    return 0;
+}
